@@ -1,0 +1,30 @@
+
+import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import NavBar from '../../Component/NavBar/NavBar';
+import HomePage from '../HomePage/HomePage';
+import StudentPage from '../StudentPage/StudentPage';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+function App() {
+  return ( 
+    <main className="App">
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+      </Routes>
+      <Routes>
+        <Route path="/home" element={<HomePage />} />
+      </Routes>
+      <Routes>
+        <Route path="/student" element={<StudentPage />} />
+      </Routes>
+    </main>
+  );
+}
+
+export default App;
