@@ -6,7 +6,7 @@ import {Link} from "react-router-dom";
 
 export default function NavBar() {
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="light" expand="lg" className="flex-column">
       <Container>
        <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

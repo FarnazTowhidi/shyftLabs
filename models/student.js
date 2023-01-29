@@ -22,4 +22,4 @@ const StudentSchema = new mongoose.Schema(
   );
   //add read property
   
-  module.exports = mongoose.model("Message", MessageSchema);
+  module.exports = mongoose.model("Message", StudentSchema);

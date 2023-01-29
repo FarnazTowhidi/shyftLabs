@@ -15,7 +15,10 @@ export default function StudentForm() {
 
     async function handleSubmit (e) {
        e.preventDefault(); 
-       const newStudent = await axios.post (`api/students`, formData)
+       const newStudent = await axios.post (`/api/students`, formData)
+       .catch(error => {
+        console.log(error.response)
+    });
     }
 
     async function handleChange (e) {
@@ -28,12 +31,14 @@ export default function StudentForm() {
                     type="text" 
                     placeholder="first name" 
                     name="firstname"
+                    required={true}
                     onChange={handleChange}
                 />
                 <Form.Control 
                     type="text" 
                     placeholder="last name" 
                     name="familyname"
+                    required={true}
                     onChange={handleChange}
                 />
                 <Form.Control 
