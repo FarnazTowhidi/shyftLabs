@@ -15,9 +15,10 @@ export default function StudentForm() {
 
     async function handleSubmit (e) {
        e.preventDefault(); 
-       await axios.post ("/api/students", formData)
+       await axios.post ("http://localhost:3001/api/students", formData)
        .catch(error => {
-        console.log(error.response)
+        console.log (error.response.data)
+        console.log ("Axios Error")
     });
     }
 
