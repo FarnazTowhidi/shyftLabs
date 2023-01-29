@@ -15,7 +15,7 @@ export default function StudentForm() {
 
     async function handleSubmit (e) {
        e.preventDefault(); 
-       const newStudent = await axios.post (`/api/students`, formData)
+       await axios.post ("/api/students", formData)
        .catch(error => {
         console.log(error.response)
     });
@@ -51,9 +51,6 @@ export default function StudentForm() {
                     Submit
                 </Button>
             </Form>    
-        </>
-        
-                    
-        
+        </>       
     )
 }
