@@ -44,8 +44,9 @@ export default function StudentForm() {
                 />
                 <Form.Control 
                     type="text" 
-                    placeholder="Date Birth" 
+                    placeholder="mm/dd/yyyy"
                     name="datebirth"
+                    required={true}
                     onChange={handleChange}
                 />
                 <Button variant="primary" type="submit">

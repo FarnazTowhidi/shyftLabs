@@ -13,16 +13,24 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return ( 
     <main className="App">
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-      </Routes>
-      <Routes>
-        <Route path="/home" element={<HomePage />} />
-      </Routes>
-      <Routes>
-        <Route path="/student" element={<StudentPage />} />
-      </Routes>
+      <Container >
+        <Row>
+          <Col xl={2}><NavBar /></Col>
+          <Col xl={10}>
+            <Routes>
+            <Route path="/" element={<HomePage />} />
+              </Routes>
+              <Routes>
+                <Route path="/home" element={<HomePage />} />
+              </Routes>
+              <Routes>
+                <Route path="/student" element={<StudentPage />} />
+              </Routes>
+          </Col>
+        </Row>
+      </Container>
+      
+      
     </main>
   );
 }

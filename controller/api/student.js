@@ -2,11 +2,8 @@ const Student = require("../../models/student");
 
 //Create student
 async function createStudent(req, res) {
-  console.log("farnaz error")
     try {
-      console.log("farnaz")
       const message = await Student.create(req.body);
-      console.log("farnaz")
       res.status(200).json(message);
     } catch (error) {
       
@@ -14,7 +11,7 @@ async function createStudent(req, res) {
     }
   }
 
-async function index(req, res) {
+async function listStudent(req, res) {
   try {
     const students = await Student.find({})
     res.status(200).json(students)
@@ -25,7 +22,7 @@ async function index(req, res) {
 
   module.exports = {
     createStudent,
-    index
+    listStudent
   };
   
 // Delete student
