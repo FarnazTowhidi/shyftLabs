@@ -1,3 +1,15 @@
+# ShyftLabs Assessment
+
+## Technologies Used
+- Single Page application
+- React
+- MongoDb
+- Morgan
+
+## ScreenShot
+<img src="https://i.imgur.com/qJgKKCt.png">
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
