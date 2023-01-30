@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react'
 import axios from "axios"
 import { Container, Row, Col, Form} from 'react-bootstrap';
@@ -25,14 +24,14 @@ export default function HomePage() {
     <>    
       <h1>Home Page</h1>
       <Container>
-        <Row style={{color: "#ffffff", backgroundColor:"#000000", borderBottom:"1px solid #c9ccd1"}}>
+        <Row className="list-header">
           <Col>First Name</Col>  
           <Col>Last Name</Col>     
           <Col>Birth Date</Col>            
         </Row>    
       {
-        students?.map ((student)=> (
-          <Row style={{backgroundColor:"#dfe2e8", borderBottom:"1px solid #c9ccd1"}}>
+        students?.map ((student, idx)=> (
+          <Row key={idx} style={{backgroundColor:"#dfe2e8", borderBottom:"1px solid #c9ccd1"}}>
             <Col>{student?.firstname}</Col>  
             <Col>{student?.familyname}</Col>     
             <Col>{student?.datebirth}</Col>            

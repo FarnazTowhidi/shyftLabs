@@ -10,15 +10,20 @@ export default function StudentForm() {
         firstname:"",
         lastname: "",
         datebirth: ""
-    }
-    )
+    })
+    const [updateMessage, SetUpdateMessage] = useState ("")
 
     async function handleSubmit (e) {
        e.preventDefault(); 
        await axios.post ("http://localhost:3001/api/students", formData)
+       setFormData ({
+        firstname:"",
+        familyname: "",
+        datebirth: ""
+    })
+        SetUpdateMessage ("New Student has been added")
        .catch(error => {
         console.log (error.response.data)
-        console.log ("Axios Error")
     });
     }
 
@@ -33,13 +38,15 @@ export default function StudentForm() {
                     placeholder="first name" 
                     name="firstname"
                     required={true}
+                    value={formData.firstname}
                     onChange={handleChange}
                 />
                 <Form.Control 
                     type="text" 
-                    placeholder="last name" 
+                    placeholder="Family name" 
                     name="familyname"
                     required={true}
+                    value={formData.familyname}
                     onChange={handleChange}
                 />
                 <Form.Control 
@@ -47,11 +54,13 @@ export default function StudentForm() {
                     placeholder="mm/dd/yyyy"
                     name="datebirth"
                     required={true}
+                    value={formData.datebirth}
                     onChange={handleChange}
                 />
+                <Form.Label>{updateMessage}</Form.Label><br />
                 <Button variant="primary" type="submit">
                     Submit
-                </Button>
+                </Button> <br />
             </Form>    
         </>       
     )
